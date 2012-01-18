@@ -1,0 +1,27 @@
+<project name="js-parser-gen" default="generate">
+	<property name="gdir" value="${basedir}/../org.eclipse.dltk.javascript.parser/src/org/eclipse/dltk/javascript/parser"/>
+	<target name="generate">
+		<java
+			fork="true"
+			classname="org.antlr.Tool"
+			dir="${gdir}">
+			<arg value="JS.g"/>
+			<classpath>
+				<fileset dir="${basedir}">
+				    <include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+		<replace file="${gdir}/JSParser.java">
+		  <replacetoken><![CDATA[public class JSParser]]></replacetoken>
+		  <replacevalue><![CDATA[@SuppressWarnings({"cast","unused","rawtypes","unchecked"})
+public class JSParser]]></replacevalue>
+		</replace>
+		<replace file="${gdir}/JSLexer.java">
+		  <replacetoken><![CDATA[public class JSLexer]]></replacetoken>
+		  <replacevalue><![CDATA[@SuppressWarnings({"unused"})
+public class JSLexer]]></replacevalue>
+		</replace>
+	</target>
+
+</project>
