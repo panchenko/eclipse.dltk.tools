@@ -1,5 +1,5 @@
 <project name="js-parser-gen" default="generate">
-	<property name="gdir" value="${basedir}/../org.eclipse.dltk.javascript.parser/src/org/eclipse/dltk/javascript/parser"/>
+	<eclipse.convertPath resourcepath="org.eclipse.dltk.javascript.parser/src/org/eclipse/dltk/javascript/parser" property="gdir"/>
 	<target name="generate">
 		<java
 			fork="true"
