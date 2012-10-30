@@ -14,7 +14,7 @@
 		</java>
 		<replace file="${gdir}/JSParser.java">
 		  <replacetoken><![CDATA[public class JSParser]]></replacetoken>
-		  <replacevalue><![CDATA[@SuppressWarnings({"cast","unused","rawtypes","unchecked"})
+		  <replacevalue><![CDATA[@SuppressWarnings({"cast","unused","rawtypes","unchecked","null"})
 public class JSParser]]></replacevalue>
 		</replace>
 		<replace file="${gdir}/JSLexer.java">
